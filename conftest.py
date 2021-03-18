@@ -9,14 +9,6 @@ import time
 db_actions = DBActions(DB_URL)
 
 
-# @pytest.fixture()
-# def browser():
-#     driver = webdriver.Chrome()
-#     driver.maximize_window()
-#     yield driver
-#     driver.quit()
-
-
 @pytest.fixture
 def setup_teardown():
     json_string = open('json_files/for_user_add.json', 'r').read()
@@ -40,7 +32,7 @@ def browser():
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+#     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.maximize_window()
     driver.implicitly_wait(5)
     yield driver
