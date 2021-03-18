@@ -1,7 +1,0 @@
-selenium
-mysql-connector
-pytest
-requests
-SQLAlchemy
-allure-pytest
-psycopg2-binary
