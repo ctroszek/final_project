@@ -5,6 +5,7 @@ import json
 from postgres.db__base_actions import DBActions
 from random import randint
 import time
+from selenium.webdriver.chrome.options import Options
 
 db_actions = DBActions(DB_URL)
 
