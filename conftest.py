@@ -27,7 +27,7 @@ def setup_teardown():
     db_actions.user_delete(username)
 
 
-@pytest.fixture()
+@pytest.fixture
 def browser():
     chrome_options = Options()
     chrome_options.add_argument('--no-sandbox')
