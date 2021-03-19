@@ -48,20 +48,20 @@ def browser():
  
 @pytest.fixture
 def api_setting():
-    json_file = open('json_files/for_pet_data.json', 'r').read()
+    json_file = open('./json_files/for_pet_data.json', 'r').read()
     user_data = json.loads(json_file)
     yield user_data
 
 
 @pytest.fixture
 def user_setting():
-    json_file = open('json_files/for_user_add.json', 'r').read()
+    json_file = open('./json_files/for_user_add.json', 'r').read()
     admin_data = json.loads(json_file)
     return admin_data
 
 
 @pytest.fixture
 def json_bd_actions():
-    json_file = open('postgres/data_for_db.json', 'r').read()
+    json_file = open('./postgres/data_for_db.json', 'r').read()
     data = json.loads(json_file)
     return data
