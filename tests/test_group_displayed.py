@@ -20,6 +20,6 @@ def test_group_displayed(browser, setup_teardown):
     admin_page.admin_page_is_present()
     admin_page.click_on_groups()
     sleep(1)
-    admin_page.group_is_exist(group_name)
+    admin_page.find_group_in_list(group_name)
 
     db_actions.group_delete(group_name)
