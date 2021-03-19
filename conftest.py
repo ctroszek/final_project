@@ -27,24 +27,24 @@ def setup_teardown():
     db_actions.user_delete(username)
 
 
-# @pytest.fixture
-# def browser():
-#     chrome_options = Options()
-#     chrome_options.add_argument('--no-sandbox')
-#      chrome_options.add_argument('--headless')
-#     chrome_options.add_argument('--disable-gpu')
-#     browser = webdriver.Chrome(options=chrome_options)
-#     # browser.maximize_window()
-#     browser.implicitly_wait(5)
-#     yield browser
-#     browser.quit()
-
-@pytest.fixture()
+@pytest.fixture
 def browser():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    yield driver
-    driver.quit()    
+    chrome_options = Options()
+    chrome_options.add_argument('--no-sandbox')
+     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    browser = webdriver.Chrome(options=chrome_options)
+    # browser.maximize_window()
+    browser.implicitly_wait(5)
+    yield browser
+    browser.quit()
+
+# @pytest.fixture()
+# def browser():
+#     driver = webdriver.Chrome()
+#     driver.maximize_window()
+#     yield driver
+#     driver.quit()    
  
 @pytest.fixture
 def api_setting():
