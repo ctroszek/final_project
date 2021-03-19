@@ -17,13 +17,13 @@ class AdminPage(BasePage):
             AdminPageLocator.LOCATOR_LINK_ADD_GROUP)
         link_groups.click()
 
-    def group_is_exist(self, group_name):
+    def find_group_in_list(self, group_name, exist=False):
         group_list = self.find_elements(AdminPageLocator.LOCATOR_GROUPS_NAME)
-        exist = False
-        for i in group_list:
-            if group_name in i.text:
+        for group in group_list:
+            if group_name in group.text:
                 exist = True
-        assert exist, f"group {group_name} not found"
+                break
+        assert exist, f"{group_name} group is not found in the list"
 
     def click_on_add_user(self):
         link_add_user = self.find_element(
